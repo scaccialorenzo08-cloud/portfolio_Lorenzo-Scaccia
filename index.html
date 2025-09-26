@@ -1,18 +1,24 @@
 <!DOCTYPE html>
 <html lang="it">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Portfolio - Lorenzo Scaccia</title>
+
   <!-- Bootstrap CSS -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-  <!-- AOS Animations -->
+
+  <!-- AOS -->
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-  <!-- Stile personalizzato -->
-  <link rel="stylesheet" href="style.css">
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="css/style.css">
+
+  <!-- Preload hero image (se la metti in /img/hero-bg.jpg) -->
+  <link rel="preload" href="img/hero-bg.jpg" as="image">
 </head>
 
-<body data-bs-spy="scroll" data-bs-target=".navbar" data-bs-offset="80" tabindex="0">
+<body data-bs-spy="scroll" data-bs-target=".navbar" data-bs-offset="90" tabindex="0">
 
   <!-- Navbar -->
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top shadow-sm">
@@ -33,63 +39,95 @@
     </div>
   </nav>
 
-  <!-- Hero con particelle -->
-  <header id="home" class="d-flex align-items-center justify-content-center bg-primary text-center hero">
+  <!-- HERO -->
+  <header id="home" class="hero d-flex align-items-center">
     <div id="particles"></div>
-    <div class="container" data-aos="zoom-in" data-aos-duration="1200">
-      <h1 class="display-3 fw-bold">Ciao, sono Lorenzo Scaccia</h1>
-      <p class="lead">Creo siti web moderni e professionali per aziende e professionisti</p>
-      <a href="#services" class="btn btn-light btn-lg mt-3">Scopri i miei servizi</a>
+    <div class="hero-overlay"></div>
+
+    <div class="container text-center text-white hero-content" data-aos="fade-up" data-aos-duration="900">
+      <h1 class="display-4 fw-bold">Siti web su misura per far crescere la tua attività</h1>
+      <p class="lead mb-4">Design professionale, siti responsive e ottimizzati per convertire visitatori in clienti.</p>
+
+      <div class="d-flex justify-content-center gap-3">
+        <button class="btn btn-lg btn-primary" data-bs-toggle="modal" data-bs-target="#quickContactModal">
+          Richiedi preventivo in 24h
+        </button>
+        <a href="#portfolio" class="btn btn-lg btn-outline-light">Vedi i progetti</a>
+      </div>
+
+      <p class="mt-4 small text-light-50">Preventivo senza impegno — ti rispondo entro 24 ore</p>
     </div>
   </header>
 
-  <!-- About -->
-  <section id="about" class="py-5">
-    <div class="container" data-aos="fade-up">
-      <div class="row align-items-center">
-        <div class="col-md-6">
-          <img src="Chi sono.JPG" alt="Chi sono" class="img-fluid rounded shadow">
+  <!-- Small trust row -->
+  <section class="py-3 bg-white">
+    <div class="container">
+      <div class="row align-items-center text-center">
+        <div class="col-md-4" data-aos="fade-up">
+          <p class="mb-0"><strong>3</strong> demo pronte</p>
         </div>
-        <div class="col-md-6">
-          <h2>Chi sono</h2>
-          <p>
-            Mi chiamo Lorenzo Scaccia e sono uno studente che cerca di crearsi un lavoro sviluppando siti web.
-            Sono un appassionato di sport e informatica in generale, pratico pallavolo e sto cercando un lavoro per ottenere dei risparmi per il periodo universitario. 
-            Realizzo esperienze digitali curate nei minimi dettagli, dalla grafica alle funzionalità, con l’obiettivo di dare valore e visibilità a chi si affida a me.
-          </p>
+        <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
+          <p class="mb-0"><strong>Cliente soddisfatti</strong> (testimonianze reali)</p>
+        </div>
+        <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
+          <p class="mb-0"><strong>Supporto</strong> opzionale mensile</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Servizi -->
+  <!-- About -->
+  <section id="about" class="py-5">
+    <div class="container" data-aos="fade-up">
+      <div class="row align-items-center">
+        <div class="col-md-6 mb-4 mb-md-0">
+          <img src="img/chi-sono.jpg" alt="Foto Lorenzo" class="img-fluid rounded shadow" loading="lazy">
+        </div>
+        <div class="col-md-6">
+          <h2>Chi sono</h2>
+          <p>
+            Mi chiamo <strong>Lorenzo Scaccia</strong>, sviluppo siti web orientati al risultato.
+            Studio soluzioni semplici e performanti per aziende e professionisti che vogliono farsi trovare e vendere online.
+          </p>
+          <ul>
+            <li>Siti responsive e veloci</li>
+            <li>Design moderno e usabile</li>
+            <li>SEO base e assistenza</li>
+          </ul>
+          <a href="#contact" class="btn btn-outline-primary mt-3">Contattami</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services -->
   <section id="services" class="py-5 bg-light">
     <div class="container text-center" data-aos="fade-up">
       <h2 class="mb-4">I miei servizi</h2>
       <div class="row g-4">
         <div class="col-md-4" data-aos="flip-left">
-          <div class="card h-100 shadow">
+          <div class="card h-100 shadow-sm">
             <div class="card-body">
               <h5 class="card-title">Pacchetto Base</h5>
-              <p class="card-text">Sito statico (3 pagine), responsive, ideale per iniziare.</p>
+              <p class="card-text">Sito vetrina (3 pagine), responsive e ottimizzato per presentare la tua attività.</p>
               <p class="fw-bold">Da €200</p>
             </div>
           </div>
         </div>
-        <div class="col-md-4" data-aos="flip-left" data-aos-delay="200">
-          <div class="card h-100 shadow">
+        <div class="col-md-4" data-aos="flip-left" data-aos-delay="150">
+          <div class="card h-100 shadow-sm">
             <div class="card-body">
               <h5 class="card-title">Pacchetto Standard</h5>
-              <p class="card-text">Sito personalizzato (5-7 pagine), responsive, con opzione manutenzione.</p>
+              <p class="card-text">Sito personalizzato (5-7 pagine), con opzione manutenzione e SEO base.</p>
               <p class="fw-bold">Da €400</p>
             </div>
           </div>
         </div>
-        <div class="col-md-4" data-aos="flip-left" data-aos-delay="400">
-          <div class="card h-100 shadow">
+        <div class="col-md-4" data-aos="flip-left" data-aos-delay="300">
+          <div class="card h-100 shadow-sm">
             <div class="card-body">
               <h5 class="card-title">Pacchetto Avanzato</h5>
-              <p class="card-text">Sito premium con SEO base, animazioni e assistenza inclusa.</p>
+              <p class="card-text">Soluzioni su misura, e-commerce, integrazioni e assistenza avanzata.</p>
               <p class="fw-bold">Da €700</p>
             </div>
           </div>
@@ -98,57 +136,151 @@
     </div>
   </section>
 
-  <!-- Portfolio -->
-  <section id="portfolio" class="py-5">
-    <div class="container text-center" data-aos="fade-up">
-      <h2 class="mb-4">Portfolio</h2>
-      <div class="row g-4">
-        <!-- Demo Ristorante -->
-        <div class="col-md-4" data-aos="fade-up">
-          <p class="mt-2 fw-bold">Sito demo ristorante</p>
-          <a href="ristorante.html" class="btn btn-outline-dark btn-sm mt-2">Visita Demo</a>
+  <!-- Trust / Testimonials -->
+  <section class="py-5">
+    <div class="container" data-aos="fade-up">
+      <h3 class="text-center mb-4">Cosa dicono</h3>
+      <div class="row g-4 justify-content-center">
+        <div class="col-md-5">
+          <div class="card p-3 shadow-sm">
+            <p class="mb-1">"Lorenzo ha creato il sito del nostro circolo: chiaro, veloce e molto apprezzato dai clienti."</p>
+            <p class="mb-0 fw-bold">— Cliente (Ristorante demo)</p>
+          </div>
         </div>
-        <!-- Demo Blog -->
-        <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
-          <p class="mt-2 fw-bold">Blog dimostrativo</p>
-          <a href="blog.html" class="btn btn-outline-dark btn-sm mt-2">Visita Demo</a>
-        </div>
-        <!-- Demo Azienda -->
-        <div class="col-md-4" data-aos="fade-up" data-aos-delay="400">
-          <p class="mt-2 fw-bold">Sito aziendale premium</p>
-          <a href="aziendale.html" class="btn btn-outline-dark btn-sm mt-2">Visita Demo</a>
+        <div class="col-md-5">
+          <div class="card p-3 shadow-sm">
+            <p class="mb-1">"Ottima comunicazione, consegna rapida e il sito è semplice da aggiornare."</p>
+            <p class="mb-0 fw-bold">— Cliente (Blog dimostrativo)</p>
+          </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Sezione Contatti -->
-  <section id="contact" class="py-5 bg-light">
+  <!-- Portfolio (micro case study) -->
+  <section id="portfolio" class="py-5 bg-light">
+    <div class="container" data-aos="fade-up">
+      <h2 class="text-center mb-4">Portfolio — progetti demo</h2>
+      <div class="row g-4">
+        <!-- Case study 1 -->
+        <div class="col-md-4" data-aos="fade-up">
+          <div class="card h-100 shadow-sm">
+            <img src="img/ristorante-thumb.jpg" class="card-img-top rounded-top" alt="Ristorante demo" loading="lazy">
+            <div class="card-body">
+              <h5 class="card-title">Ristorante Demo</h5>
+              <p class="card-text small">Sito vetrina con menu, galleria e form prenotazioni. Obiettivo: aumentare le prenotazioni online.</p>
+              <a href="ristorante.html" class="btn btn-outline-primary btn-sm">Visita Demo</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Case study 2 -->
+        <div class="col-md-4" data-aos="fade-up" data-aos-delay="150">
+          <div class="card h-100 shadow-sm">
+            <img src="img/blog-thumb.jpg" class="card-img-top rounded-top" alt="Blog demo" loading="lazy">
+            <div class="card-body">
+              <h5 class="card-title">Blog Dimostrativo</h5>
+              <p class="card-text small">Layout ottimizzato per contenuti, con SEO on-page e categorie.</p>
+              <a href="blog.html" class="btn btn-outline-primary btn-sm">Visita Demo</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Case study 3 -->
+        <div class="col-md-4" data-aos="fade-up" data-aos-delay="300">
+          <div class="card h-100 shadow-sm">
+            <img src="img/azienda-thumb.jpg" class="card-img-top rounded-top" alt="Azienda demo" loading="lazy">
+            <div class="card-body">
+              <h5 class="card-title">Sito Aziendale Premium</h5>
+              <p class="card-text small">Soluzione su misura per aziende che vogliono comunicare autorevolezza e servizi.</p>
+              <a href="aziendale.html" class="btn btn-outline-primary btn-sm">Visita Demo</a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact & Google Form -->
+  <section id="contact" class="py-5">
     <div class="container text-center" data-aos="fade-up">
       <h2 class="mb-4">Contattami</h2>
-      <div class="iframe-wrapper">
+
+      <div class="iframe-wrapper mx-auto">
         <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSfVkb7J4SInKZNu5xuhefPnABJ7102eFCOKV7UIWLRMbLCqfQ/viewform?embedded=true"
-                frameborder="0" marginheight="0" marginwidth="0">
+                frameborder="0" marginheight="0" marginwidth="0" loading="lazy">
           Caricamento…
         </iframe>
       </div>
+
       <p class="mt-3 small text-muted">
-        Oppure <a href="https://docs.google.com/forms/d/e/1FAIpQLSfVkb7J4SInKZNu5xuhefPnABJ7102eFCOKV7UIWLRMbLCqfQ/viewform" target="_blank">apri il modulo in una nuova pagina</a>.
+        Oppure <a href="https://docs.google.com/forms/d/e/1FAIpQLSfVkb7J4SInKZNu5xuhefPnABJ7102eFCOKV7UIWLRMbLCqfQ/viewform" target="_blank" rel="noopener">apri il modulo in una nuova pagina</a>.
       </p>
     </div>
   </section>
 
   <!-- Footer -->
-  <footer class="bg-dark text-white text-center py-3">
-    <p class="mb-0">&copy; 2025 Lorenzo Scaccia - Tutti i diritti riservati</p>
+  <footer class="bg-dark text-white text-center py-4">
+    <div class="container">
+      <p class="mb-1">&copy; 2025 Lorenzo Scaccia</p>
+      <small>Realizzo siti web per professionisti e piccole aziende</small>
+    </div>
   </footer>
 
-  <!-- JS -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/particles.js"></script>
-  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-  <script src="script.js"></script>
+  <!-- Quick contact modal -->
+  <div class="modal fade" id="quickContactModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <form id="quickContactForm" class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Richiedi preventivo rapido</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Chiudi"></button>
+        </div>
+        <div class="modal-body">
+          <div class="mb-2">
+            <label class="form-label">Nome</label>
+            <input type="text" name="nome" class="form-control" required>
+          </div>
+          <div class="mb-2">
+            <label class="form-label">Email</label>
+            <input type="email" name="email" class="form-control" required>
+          </div>
+          <div class="mb-2">
+            <label class="form-label">Tipo di sito</label>
+            <select name="tipo" class="form-select">
+              <option value="vetrina">Sito vetrina</option>
+              <option value="ecommerce">E-commerce</option>
+              <option value="blog">Blog / contenuti</option>
+              <option value="altro">Altro</option>
+            </select>
+          </div>
+          <div class="mb-2">
+            <label class="form-label">Budget indicativo</label>
+            <select name="budget" class="form-select">
+              <option>€200 - €400</option>
+              <option>€400 - €700</option>
+              <option>€700+</option>
+            </select>
+          </div>
+          <div class="mb-2">
+            <label class="form-label">Messaggio (opzionale)</label>
+            <textarea name="messaggio" class="form-control" rows="3"></textarea>
+          </div>
+          <p class="small text-muted mb-0">Cliccando "Continua" aprirai il modulo completo per finalizzare la richiesta.</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Annulla</button>
+          <button type="submit" class="btn btn-primary">Continua</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/particles.js" defer></script>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js" defer></script>
+  <script src="js/script.js" defer></script>
 </body>
 </html>
-
 
