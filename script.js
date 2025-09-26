@@ -1,30 +1,73 @@
-// Inizializza AOS (animazioni on-scroll)
-AOS.init();
+// script.js - carica dopo DOM ready (index.html usa defer)
 
-// Funzione che avvia le particelle
-function startParticles() {
-  document.getElementById("particles").style.display = "block";
-  particlesJS("particles", {
-    "particles": {
-      "number": { "value": 50 },
-      "size": { "value": 3 },
-      "move": { "speed": 2 },
-      "line_linked": { "enable": true }
-    }
+/* AOS init */
+if (typeof AOS !== 'undefined') {
+  AOS.init({
+    duration: 700,
+    once: true,
+    anchorPlacement: 'top-bottom'
   });
+}
 
-  // Dopo 6 secondi spariscono
+/* Particles: inizializza in modo non bloccante */
+function startParticles() {
+  // assicurati che l'elemento esista
+  if (!document.getElementById('particles')) return;
+
+  // mostra elemento
+  document.getElementById('particles').style.display = 'block';
+
+  // inizializza solo se particlesJS è disponibile
+  if (typeof particlesJS !== 'undefined') {
+    try {
+      particlesJS('particles', {
+        "particles": {
+          "number": { "value": 40 },
+          "size": { "value": 2.5 },
+          "move": { "speed": 1.8 },
+          "line_linked": { "enable": true, "opacity": 0.12 }
+        }
+      });
+    } catch (e) {
+      // se l'inizializzazione fallisce, nascondi particles
+      document.getElementById('particles').style.display = 'none';
+    }
+  }
+  // spegni dopo 6 secondi per non distrarre
   setTimeout(() => {
-    document.getElementById("particles").style.display = "none";
+    const p = document.getElementById('particles');
+    if (p) p.style.display = 'none';
   }, 6000);
 }
 
-// Avvio iniziale all'apertura sito
-startParticles();
+/* Avvia particles dopo che la pagina è pronta, in modo non bloccante */
+document.addEventListener('DOMContentLoaded', () => {
+  // small delay per non interferire con il paint iniziale
+  setTimeout(startParticles, 300);
+});
 
-// Ogni volta che clicchi su "Home" dalla navbar riavvia animazione
-document.querySelectorAll('a[href="#home"]').forEach(link => {
-  link.addEventListener("click", () => {
-    setTimeout(startParticles, 500); // delay per evitare conflitti
+/* Modal quick contact: quando si invia, apri il Google Form completo in nuova scheda */
+document.addEventListener('DOMContentLoaded', () => {
+  const quickForm = document.getElementById('quickContactForm');
+  if (!quickForm) return;
+
+  quickForm.addEventListener('submit', (e) => {
+    e.preventDefault();
+
+    // puoi leggere i valori se vuoi usarli per prefill (non usato qui)
+    const formData = new FormData(quickForm);
+    const nome = formData.get('nome') || '';
+    const email = formData.get('email') || '';
+
+    // URL del Google Form (il tuo)
+    const googleFormUrl = 'https://docs.google.com/forms/d/e/1FAIpQLSfVkb7J4SInKZNu5xuhefPnABJ7102eFCOKV7UIWLRMbLCqfQ/viewform';
+
+    // Apri il form completo in nuova scheda (l'utente completerà i dettagli lì)
+    window.open(googleFormUrl, '_blank', 'noopener');
+
+    // Chiudi il modal (Bootstrap)
+    const modalEl = document.getElementById('quickContactModal');
+    const modalInstance = bootstrap.Modal.getInstance(modalEl);
+    if (modalInstance) modalInstance.hide();
   });
 });
