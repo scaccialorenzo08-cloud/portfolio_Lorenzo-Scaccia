@@ -1,251 +1,153 @@
 <!DOCTYPE html>
 <html lang="it">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Portfolio - Lorenzo Scaccia</title>
-    <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-    <!-- AOS Animations -->
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    <style>
-        /* Navbar link underline animata */
-        .navbar-nav .nav-link {
-            position: relative;
-            font-weight: 500;
-            transition: color 0.3s;
-        }
-
-        .navbar-nav .nav-link::after {
-            content: '';
-            position: absolute;
-            width: 0;
-            height: 2px;
-            left: 50%;
-            bottom: -5px;
-            background-color: #fff;
-            transition: all 0.3s ease;
-        }
-
-        .navbar-nav .nav-link:hover::after {
-            width: 100%;
-            left: 0;
-        }
-
-        /* Hero con overlay */
-        header {
-            position: relative;
-            height: 100vh;
-            overflow: hidden;
-            color: white;
-            text-shadow: 0 2px 6px rgba(0, 0, 0, 0.4);
-        }
-
-        #particles {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            z-index: 1;
-        }
-
-        header .container {
-            position: relative;
-            z-index: 2;
-        }
-
-        /* Animazioni morbide */
-        section {
-            scroll-margin-top: 80px;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Portfolio - Lorenzo Scaccia</title>
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- AOS Animations -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <!-- Stile personalizzato -->
+  <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body data-bs-spy="scroll" data-bs-target=".navbar" data-bs-offset="80" tabindex="0">
 
-    <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top shadow-sm">
-        <div class="container">
-            <a class="navbar-brand fw-bold" href="#">Lorenzo Scaccia</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#about">Chi sono</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#services">Servizi</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#portfolio">Portfolio</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#contact">Contatti</a></li>
-                </ul>
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top shadow-sm">
+    <div class="container">
+      <a class="navbar-brand fw-bold" href="#">Lorenzo Scaccia</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="#about">Chi sono</a></li>
+          <li class="nav-item"><a class="nav-link" href="#services">Servizi</a></li>
+          <li class="nav-item"><a class="nav-link" href="#portfolio">Portfolio</a></li>
+          <li class="nav-item"><a class="nav-link" href="#contact">Contatti</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero con particelle -->
+  <header id="home" class="d-flex align-items-center justify-content-center bg-primary text-center hero">
+    <div id="particles"></div>
+    <div class="container" data-aos="zoom-in" data-aos-duration="1200">
+      <h1 class="display-3 fw-bold">Ciao, sono Lorenzo Scaccia</h1>
+      <p class="lead">Creo siti web moderni e professionali per aziende e professionisti</p>
+      <a href="#services" class="btn btn-light btn-lg mt-3">Scopri i miei servizi</a>
+    </div>
+  </header>
+
+  <!-- About -->
+  <section id="about" class="py-5">
+    <div class="container" data-aos="fade-up">
+      <div class="row align-items-center">
+        <div class="col-md-6">
+          <img src="Chi sono.JPG" alt="Chi sono" class="img-fluid rounded shadow">
+        </div>
+        <div class="col-md-6">
+          <h2>Chi sono</h2>
+          <p>
+            Mi chiamo Lorenzo Scaccia e sono uno studente che cerca di crearsi un lavoro sviluppando siti web.
+            Sono un appassionato di sport e informatica in generale, pratico pallavolo e sto cercando un lavoro per ottenere dei risparmi per il periodo universitario. 
+            Realizzo esperienze digitali curate nei minimi dettagli, dalla grafica alle funzionalità, con l’obiettivo di dare valore e visibilità a chi si affida a me.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Servizi -->
+  <section id="services" class="py-5 bg-light">
+    <div class="container text-center" data-aos="fade-up">
+      <h2 class="mb-4">I miei servizi</h2>
+      <div class="row g-4">
+        <div class="col-md-4" data-aos="flip-left">
+          <div class="card h-100 shadow">
+            <div class="card-body">
+              <h5 class="card-title">Pacchetto Base</h5>
+              <p class="card-text">Sito statico (3 pagine), responsive, ideale per iniziare.</p>
+              <p class="fw-bold">Da €200</p>
             </div>
+          </div>
         </div>
-    </nav>
-
-    <!-- Hero con particelle -->
-    <header id="home" class="d-flex align-items-center justify-content-center bg-primary text-center">
-        <div id="particles"></div>
-        <div class="container" data-aos="zoom-in" data-aos-duration="1200">
-            <h1 class="display-3 fw-bold">Ciao, sono Lorenzo Scaccia</h1>
-            <p class="lead">Creo siti web moderni e professionali per aziende e professionisti</p>
-            <a href="#services" class="btn btn-light btn-lg mt-3">Scopri i miei servizi</a>
-        </div>
-    </header>
-
-    <!-- About -->
-    <section id="about" class="py-5">
-        <div class="container" data-aos="fade-up">
-            <div class="row align-items-center">
-                <div class="col-md-6">
-                    <img src="Chi sono.JPG" alt="Chi sono" class="img-fluid rounded shadow">
-                </div>
-                <div class="col-md-6">
-                    <h2>Chi sono</h2>
-                    <p>
-                        Mi chiamo Lorenzo Scaccia e sono uno studente che cerca di crearsi un lavoro sviluppando siti web.
-                        sono un appassionato di sport e informatica in generale, pratico pallavolo e sto cercando un lavoro per ottenere dei risparmi per il periodo universitario. 
-                        Realizzo esperienze digitali curate nei minimi dettagli, dalla grafica
-                        alle funzionalità, con l’obiettivo di dare valore e visibilità a chi si affida a me.
-                    </p>
-                </div>
+        <div class="col-md-4" data-aos="flip-left" data-aos-delay="200">
+          <div class="card h-100 shadow">
+            <div class="card-body">
+              <h5 class="card-title">Pacchetto Standard</h5>
+              <p class="card-text">Sito personalizzato (5-7 pagine), responsive, con opzione manutenzione.</p>
+              <p class="fw-bold">Da €400</p>
             </div>
+          </div>
         </div>
-    </section>
-
-    <!-- Servizi -->
-    <section id="services" class="py-5 bg-light">
-        <div class="container text-center" data-aos="fade-up">
-            <h2 class="mb-4">I miei servizi</h2>
-            <div class="row g-4">
-                <div class="col-md-4" data-aos="flip-left">
-                    <div class="card h-100 shadow">
-                        <div class="card-body">
-                            <h5 class="card-title">Pacchetto Base</h5>
-                            <p class="card-text">Sito statico (3 pagine), responsive, ideale per iniziare.</p>
-                            <p class="fw-bold">Da €200</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4" data-aos="flip-left" data-aos-delay="200">
-                    <div class="card h-100 shadow">
-                        <div class="card-body">
-                            <h5 class="card-title">Pacchetto Standard</h5>
-                            <p class="card-text">Sito personalizzato (5-7 pagine), responsive, con opzione manutenzione.
-                            </p>
-                            <p class="fw-bold">Da €400</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4" data-aos="flip-left" data-aos-delay="400">
-                    <div class="card h-100 shadow">
-                        <div class="card-body">
-                            <h5 class="card-title">Pacchetto Avanzato</h5>
-                            <p class="card-text">Sito premium con SEO base, animazioni e assistenza inclusa.</p>
-                            <p class="fw-bold">Da €700</p>
-                        </div>
-                    </div>
-                </div>
+        <div class="col-md-4" data-aos="flip-left" data-aos-delay="400">
+          <div class="card h-100 shadow">
+            <div class="card-body">
+              <h5 class="card-title">Pacchetto Avanzato</h5>
+              <p class="card-text">Sito premium con SEO base, animazioni e assistenza inclusa.</p>
+              <p class="fw-bold">Da €700</p>
             </div>
+          </div>
         </div>
-    </section>
+      </div>
+    </div>
+  </section>
 
-    <!-- Portfolio -->
-    <section id="portfolio" class="py-5">
-        <div class="container text-center" data-aos="fade-up">
-            <h2 class="mb-4">Portfolio</h2>
-            <div class="row g-4">
-    
-                <!-- Demo Ristorante -->
-                <div class="col-md-4" data-aos="fade-up">
-                    <p class="mt-2 fw-bold">Sito demo ristorante</p>
-                    <a href="ristorante.html" class="btn btn-outline-dark btn-sm mt-2">Visita Demo</a>
-                </div>
-    
-                <!-- Demo Blog -->
-                <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
-                    <p class="mt-2 fw-bold">Blog dimostrativo</p>
-                    <a href="blog.html" class="btn btn-outline-dark btn-sm mt-2">Visita Demo</a>
-                </div>
-    
-                <!-- Demo Azienda -->
-                <div class="col-md-4" data-aos="fade-up" data-aos-delay="400">
-                    <p class="mt-2 fw-bold">Sito aziendale premium</p>
-                    <a href="aziendale.html" class="btn btn-outline-dark btn-sm mt-2">Visita Demo</a>
-                </div>
-    
-            </div>
+  <!-- Portfolio -->
+  <section id="portfolio" class="py-5">
+    <div class="container text-center" data-aos="fade-up">
+      <h2 class="mb-4">Portfolio</h2>
+      <div class="row g-4">
+        <!-- Demo Ristorante -->
+        <div class="col-md-4" data-aos="fade-up">
+          <p class="mt-2 fw-bold">Sito demo ristorante</p>
+          <a href="ristorante.html" class="btn btn-outline-dark btn-sm mt-2">Visita Demo</a>
         </div>
-    </section>
-
-
-    <!-- Sezione Contatti -->
-    <section id="contact" class="py-5 bg-light">
-        <div class="container text-center" data-aos="fade-up">
-            <h2 class="mb-4">Contattami</h2>
-    
-            <!-- Wrapper responsivo per l’iframe -->
-            <div
-                style="position:relative; width:100%; padding-bottom:120%; height:0; overflow:hidden; max-width:900px; margin:0 auto;">
-                <iframe
-                    src="https://docs.google.com/forms/d/e/1FAIpQLSfVkb7J4SInKZNu5xuhefPnABJ7102eFCOKV7UIWLRMbLCqfQ/viewform?embedded=true"
-                    width="100%" height="100%" frameborder="0" marginheight="0" marginwidth="0"
-                    style="position:absolute; top:0; left:0; width:100%; height:100%; border:0;">
-                    Caricamento…
-                </iframe>
-            </div>
-    
-            <p class="mt-3 small text-muted">
-                Oppure <a
-                    href="https://docs.google.com/forms/d/e/1FAIpQLSfVkb7J4SInKZNu5xuhefPnABJ7102eFCOKV7UIWLRMbLCqfQ/viewform"
-                    target="_blank">apri il modulo in una nuova pagina</a>.
-            </p>
+        <!-- Demo Blog -->
+        <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
+          <p class="mt-2 fw-bold">Blog dimostrativo</p>
+          <a href="blog.html" class="btn btn-outline-dark btn-sm mt-2">Visita Demo</a>
         </div>
-    </section>
+        <!-- Demo Azienda -->
+        <div class="col-md-4" data-aos="fade-up" data-aos-delay="400">
+          <p class="mt-2 fw-bold">Sito aziendale premium</p>
+          <a href="aziendale.html" class="btn btn-outline-dark btn-sm mt-2">Visita Demo</a>
+        </div>
+      </div>
+    </div>
+  </section>
 
+  <!-- Sezione Contatti -->
+  <section id="contact" class="py-5 bg-light">
+    <div class="container text-center" data-aos="fade-up">
+      <h2 class="mb-4">Contattami</h2>
+      <div class="iframe-wrapper">
+        <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSfVkb7J4SInKZNu5xuhefPnABJ7102eFCOKV7UIWLRMbLCqfQ/viewform?embedded=true"
+                frameborder="0" marginheight="0" marginwidth="0">
+          Caricamento…
+        </iframe>
+      </div>
+      <p class="mt-3 small text-muted">
+        Oppure <a href="https://docs.google.com/forms/d/e/1FAIpQLSfVkb7J4SInKZNu5xuhefPnABJ7102eFCOKV7UIWLRMbLCqfQ/viewform" target="_blank">apri il modulo in una nuova pagina</a>.
+      </p>
+    </div>
+  </section>
 
-    <!-- Footer -->
-    <footer class="bg-dark text-white text-center py-3">
-        <p class="mb-0">&copy; 2025 Lorenzo Scaccia - Tutti i diritti riservati</p>
-    </footer>
+  <!-- Footer -->
+  <footer class="bg-dark text-white text-center py-3">
+    <p class="mb-0">&copy; 2025 Lorenzo Scaccia - Tutti i diritti riservati</p>
+  </footer>
 
-    <!-- JS -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/particles.js"></script>
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script>
-        // Inizializza AOS (animazioni on-scroll)
-        AOS.init();
-
-        // Funzione che avvia le particelle
-        function startParticles() {
-            document.getElementById("particles").style.display = "block";
-            particlesJS("particles", {
-                "particles": {
-                    "number": { "value": 50 },
-                    "size": { "value": 3 },
-                    "move": { "speed": 2 },
-                    "line_linked": { "enable": true }
-                }
-            });
-
-            // Dopo 6 secondi spariscono
-            setTimeout(() => {
-                document.getElementById("particles").style.display = "none";
-            }, 6000);
-        }
-
-        // Avvio iniziale all'apertura sito
-        startParticles();
-
-        // Ogni volta che clicchi su "Home" dalla navbar riavvia animazione
-        document.querySelectorAll('a[href="#home"]').forEach(link => {
-            link.addEventListener("click", () => {
-                setTimeout(startParticles, 500); // delay per evitare conflitti
-            });
-        });
-    </script>
+  <!-- JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/particles.js"></script>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script src="js/script.js"></script>
 </body>
-
-
 </html>
 
